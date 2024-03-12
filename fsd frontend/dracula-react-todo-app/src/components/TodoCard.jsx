@@ -9,15 +9,15 @@ const TodoElement = ({ todo, compactView }) => {
 
   return (
     <Box 
-      onDoubleClick={() => todo.isCompleted && completeTodo(todo.id)}
-      color={!todo.isCompleted && "black"}
+      onDoubleClick={() => todo.status && completeTodo(todo.id)}
+      color={!todo.status && "black"}
       display="flex" p="sm" mb="xs" rounded="lg" as="article">
       <Box display="flex" pr="sm" style={{flexDirection: "column"}}>
-        <Text color={todo.isCompleted ? "blackSecondary" : "purpleCyan"} style={{wordBreak: "break-all"}}>
-          {compactView ? cropLongText(todo.text) : todo.text}
+        <Text color={todo.status ? "blackSecondary" : "purpleCyan"} style={{wordBreak: "break-all"}}>
+          {compactView ? cropLongText(todo.title) : todo.title}
         </Text>
         <Text mt={!compactView && "xs"} color="blackSecondary">
-          {!compactView && todo.date}
+          {!compactView && todo.description}
         </Text>
       </Box>
       <TodoCardButtons todo={todo} />

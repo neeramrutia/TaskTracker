@@ -9,8 +9,8 @@ const NavTabs = ({ setShowAll, setFilterCompleted }) => {
 
   const tabs = [
     { id: 1, text: "All", showAll: true, count: todos.length },
-    { id: 2, text: "Open", showAll: false, filterCompleted: false, count: todos.filter(todo => !todo.isCompleted).length},
-    { id: 3, text: "Completed", showAll: false, filterCompleted: true, count: todos.filter(todo => todo.isCompleted).length},
+    { id: 2, text: "Open", showAll: false, filterCompleted: false, count: todos.filter(todo => !todo.status).length},
+    { id: 3, text: "Completed", showAll: false, filterCompleted: true, count: todos.filter(todo => todo.status).length},
   ]
 
   const handleClick = (tab) => {
