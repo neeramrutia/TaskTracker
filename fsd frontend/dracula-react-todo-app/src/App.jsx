@@ -8,26 +8,20 @@ import TodoCard from './components/TodoCard'
 import Form from './components/Form'
 import Notification from './components/Notification'
 
-const App = () => {
-  const [ compactView, setCompactView ] = useState(false)
-  const [ showAll, setShowAll ] = useState(false)
-  const [ filterCompleted, setFilterCompleted ] = useState(false)
 
-  const { todos } = useContext(TodoContext)
-  
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Home from './components/home'
+import LandingPage from './components/Auth/landingPage'
+
+const App = () => {
+ 
   return (
-    <Box className='container'>
-      <Header setCompactView={setCompactView} />
-      <NavTabs setShowAll={setShowAll} setFilterCompleted={setFilterCompleted} />
-      <Box as='main' mt='xs'>
-        {todos
-        .filter(todo => showAll || todo.isCompleted==filterCompleted)
-        .map(todo => 
-          <TodoCard key={todo.id} todo={todo} compactView={compactView} />)}
-      </Box>
-      <Form />
-      <Notification />
-    </Box>
+    <Router>
+      <Routes>
+        <Route exact path='/home' element = {<Home/>}/>
+        <Route exact path='/' element = {<LandingPage/>}/>
+      </Routes>
+    </Router>
   )
 }
 
