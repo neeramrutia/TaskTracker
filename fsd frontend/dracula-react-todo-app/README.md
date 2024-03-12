@@ -12,3 +12,5 @@ The app uses localstorage to save and retrieve todos.
 - Clone this repository.
 - `npm install` to install all dependencies.
 - `npm run dev` to start the local server.
+
+## NEEr
