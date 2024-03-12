@@ -7,7 +7,6 @@ export default function SignUp() {
     const [email, setEmail] = useState("")
     const [pass, setPass] = useState("")
     const Signup = async() =>{
-        toast.success("user created successfully")
         console.log(name)
         console.log(email)
         console.log(pass)
@@ -17,7 +16,13 @@ export default function SignUp() {
             name
         })
         if(res.status == 200){
+            setEmail("")
+            setName("")
+            setPass("")
             toast.success("user created successfully")
+            setTimeout(()=>{toast.success("Please sign In with creadentials to continue", {iconTheme: {primary: "#ffff80", secondary: "#21222c"}, style: {color: "#ffff80"}})} , 1500)
+        }else{
+            toast.error("Server error")
         }
     } 
 

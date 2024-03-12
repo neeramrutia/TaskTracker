@@ -1,5 +1,5 @@
 import 'dracula-ui/styles/dracula-ui.css'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TodoContext } from '../context/TodoContext'
 import { Box } from 'dracula-ui'
 import Header from '../components/Header'
@@ -16,6 +16,11 @@ const Home = () => {
   const [ filterCompleted, setFilterCompleted ] = useState(false)
 
   const { todos } = useContext(TodoContext)
+  useEffect(()=>{
+    if(localStorage.getItem("Token") == null){
+      window.location.href = "/"
+    }
+  })
   
   return (
     <Box className='container'>
