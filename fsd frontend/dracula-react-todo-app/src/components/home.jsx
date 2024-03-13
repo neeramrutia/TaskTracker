@@ -28,7 +28,7 @@ const Home = () => {
       <NavTabs setShowAll={setShowAll} setFilterCompleted={setFilterCompleted} />
       <Box as='main' mt='xs'>
         {todos
-        .filter(todo => showAll || todo.isCompleted==filterCompleted)
+        .filter(todo => showAll || todo.status==filterCompleted)
         .map(todo => 
           <TodoCard key={todo.id} todo={todo} compactView={compactView} />)}
       </Box>

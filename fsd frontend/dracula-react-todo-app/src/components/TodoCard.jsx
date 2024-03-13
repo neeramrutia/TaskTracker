@@ -9,7 +9,7 @@ const TodoElement = ({ todo, compactView }) => {
 
   return (
     <Box 
-      onDoubleClick={() => todo.status && completeTodo(todo.id)}
+      onDoubleClick={() => todo.status && completeTodo(todo.id , todo.title , todo.description , false)}
       color={!todo.status && "black"}
       display="flex" p="sm" mb="xs" rounded="lg" as="article">
       <Box display="flex" pr="sm" style={{flexDirection: "column"}}>

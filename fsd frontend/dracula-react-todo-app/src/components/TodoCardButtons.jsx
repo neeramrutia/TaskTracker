@@ -7,8 +7,8 @@ const TodoCardButtons = ({ todo }) => {
   
   return (
   <Box display="flex">
-    <Button size="sm" mr="xs" color="green" variant="ghost" disabled={todo.isCompleted ? true : false}
-      onClick={() => completeTodo(todo.id)}>
+    <Button size="sm" mr="xs" color="green" variant="ghost" disabled={todo.status ? true : false}
+      onClick={() => completeTodo(todo.id , todo.title , todo.description , true)}>
       Done
     </Button>
     <Button size="sm" color="purple" variant="ghost"
