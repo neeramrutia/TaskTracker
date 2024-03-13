@@ -19,6 +19,9 @@ const TodoElement = ({ todo, compactView }) => {
         <Text mt={!compactView && "xs"} color="blackSecondary">
           {!compactView && todo.description}
         </Text>
+        <Text mt={!compactView && "xs"} color="blackSecondary">
+          {todo.status && "Double tap to restore this todo"}
+        </Text>
       </Box>
       <TodoCardButtons todo={todo} />
     </Box>
